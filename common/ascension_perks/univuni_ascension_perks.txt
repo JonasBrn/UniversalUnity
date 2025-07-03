@@ -1,0 +1,137 @@
+ap_universal_unity = {
+	potential = {
+		
+		OR = {
+			has_nemesis = yes
+			has_biogenesis_dlc = yes
+			has_machine_age_dlc = yes
+		}
+		has_apocalypse_dlc = yes
+		
+		
+		NOR = {
+			has_ascension_perk = ap_become_the_crisis
+			has_ascension_perk = ap_cosmogenesis
+			has_ascension_perk = ap_behemoths
+			has_ascension_perk = ap_defender_of_the_galaxy
+			has_origin = origin_slavers
+		}
+		NOT = {
+			has_ethic = ethic_gestalt_consciousness
+		}
+	}
+
+	possible = {
+		custom_tooltip = {
+			fail_text = "requires_ascension_perks_3"
+			num_ascension_perks > 2
+		}
+		custom_tooltip = {
+			fail_text = "requires_independence"
+			is_subject = no
+		}
+		custom_tooltip = {
+			fail_text = "must_not_be_custodian"
+			is_galactic_custodian = no
+		}
+		custom_tooltip = {
+			fail_text = "must_not_be_emperor"
+			is_galactic_emperor = no
+		}
+	}
+
+	on_enabled = {
+		hidden_effect = {
+			set_ai_personality = became_the_crisis
+			country_event = { id = timeline.69 } # Timeline Become the crisis
+		}
+		activate_crisis_progression = nemesis_path
+	}
+
+	ai_weight = {
+		factor = 7.5
+		modifier = {
+			factor = 0
+			NOR = {
+				has_ethic = ethic_fanatic_authoritarian	# check
+				has_ethic = ethic_fanatic_egalitarian	# check
+				has_ethic = ethic_fanatic_materialist	# check
+				has_ethic = ethic_fanatic_militarist	# check
+				has_ethic = ethic_fanatic_pacifist
+				has_ethic = ethic_fanatic_spiritualist	# check
+				has_ethic = ethic_fanatic_xenophile
+				has_ethic = ethic_fanatic_xenophobe
+			}
+		}
+		modifier = {
+			factor = 10
+			is_homicidal = yes
+		}
+		modifier = {
+			factor = 2
+			has_tradition = tr_supremacy_finish
+			is_militarist = yes
+		}
+		modifier = {
+			factor = 2
+			has_tradition = tr_discovery_finish
+			is_materialist = yes
+		}
+		modifier = {
+			factor = 2
+			OR = {
+				has_tradition = tr_harmony_finish
+				has_tradition = tr_psionics_finish
+			}
+			is_spiritualist = yes
+		}
+		modifier = {
+			factor = 2
+			OR = {
+				has_civic = civic_police_state
+				has_civic = civic_aristocratic_elite
+				has_civic = civic_corvee_system
+				has_civic = civic_feudal_realm
+			}
+			is_authoritarian = yes
+		}
+		modifier = {
+			factor = 4
+			is_authoritarian = yes
+			has_civic = civic_imperial_cult
+		}
+		modifier = {
+			factor = 2
+			OR = {
+				has_civic = civic_beacon_of_liberty
+				has_civic = civic_idealistic_foundation
+			}
+			is_egalitarian = yes
+		}
+		modifier = {
+			factor = 2
+			
+		}
+		modifier = {
+			factor = 0
+			galaxy_percentage < 0.1
+		}
+		modifier = {
+			factor = 2
+			galaxy_percentage > 0.2
+		}
+		modifier = {
+			factor = 0
+			count_playable_country = {
+				count > 1
+				limit = {
+					has_ascension_perk = ap_become_the_crisis
+				}
+			}
+		}
+		modifier = {
+			factor = 0
+			blocks_disruptive_gameplay = yes
+		}
+	}
+}
