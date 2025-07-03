@@ -6,7 +6,7 @@ crisis_universal_unity_level_1 = {
 	perks = {
 		menp_behemoth_objectives
 		menp_behemoth_egg
-		menp_behemoth_society_1
+		menp_universal_unity_unity
 		menp_behemoth_food_1
 	}
 
