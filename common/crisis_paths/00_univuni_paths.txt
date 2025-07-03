@@ -1,0 +1,22 @@
+# Documentation in common/crisis_paths
+
+universal_unity_path = {
+	crisis_currency = "harmony"
+
+	levels = {
+		crisis_universal_unity_level_1
+		crisis_universal_unity_level_2
+		crisis_universal_unity_level_3
+		crisis_universal_unity_level_4
+		crisis_universal_unity_level_5
+	}
+
+	objectives = {
+		crisobj_research_tech
+		crisobj_research_thesis
+		crisobj_have_scholarium_vassals
+		crisobj_neural_chips
+		crisobj_have_science_nexuses
+		crisobj_galcom_science_resolution
+	}
+}

@@ -45,7 +45,7 @@ ap_universal_unity = {
 			set_ai_personality = became_the_crisis
 			country_event = { id = timeline.69 } # Timeline Become the crisis
 		}
-		activate_crisis_progression = nemesis_path
+		activate_crisis_progression = universal_unity_path
 	}
 
 	ai_weight = {
@@ -86,17 +86,16 @@ ap_universal_unity = {
 			is_spiritualist = yes
 		}
 		modifier = {
-			factor = 2
+			factor = 4
 			OR = {
-				has_civic = civic_police_state
-				has_civic = civic_aristocratic_elite
-				has_civic = civic_corvee_system
-				has_civic = civic_feudal_realm
+				has_origin = origin_legendary_leader
+				has_origin = origin_legendary_leader_dictatorial
+				has_origin = origin_legendary_leader_imperial
 			}
 			is_authoritarian = yes
 		}
 		modifier = {
-			factor = 4
+			factor = 3
 			is_authoritarian = yes
 			has_civic = civic_imperial_cult
 		}
@@ -125,7 +124,7 @@ ap_universal_unity = {
 			count_playable_country = {
 				count > 1
 				limit = {
-					has_ascension_perk = ap_become_the_crisis
+					has_ascension_perk = ap_universal_unity
 				}
 			}
 		}
